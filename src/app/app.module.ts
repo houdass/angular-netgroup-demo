@@ -6,6 +6,7 @@ import { TaskComponent } from './task/task.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { TaskInfoComponent } from './task/task-info/task-info.component';
 import { HeaderComponent } from './header/header.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
     TaskComponent,
     TaskListComponent,
     TaskInfoComponent,
-    HeaderComponent
+    HeaderComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule
