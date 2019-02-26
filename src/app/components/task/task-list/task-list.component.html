@@ -1,0 +1,34 @@
+<h3>Tasks List</h3>
+<div class="input-group">
+  <input class="form-control" (keyup.enter)="isEdit ? addTask() : confirmTask(newTask)" [(ngModel)]="newTask">
+  <div class="input-group-btn">
+    <button class="btn btn-success" (click)="addTask(newTask)" *ngIf="!isEdit" [disabled]="!newTask">
+      Ajouter
+    </button>
+    <button class="btn btn-info" (click)="confirmTask(newTask)" *ngIf="isEdit" [disabled]="!newTask">
+      Modifier
+    </button>
+  </div>
+</div>
+<br/>
+<div *ngFor="let task of tasks">
+  {{ task.title }} (id: {{ task.id }})
+  <span class="label text-centers" [ngClass]="task.completed ? 'label-success' : 'label-warning'">{{ task.completed ? 'Complète' : 'Incomplète' }}</span>
+  <div class="btn-group pull-right">
+    <button class="btn btn-xs" [ngClass]="task.completed ? 'btn-warning' : 'btn-success'"
+            (click)="task.toggleCompleted()">
+      <span class="glyphicon" [ngClass]="task.completed ? 'glyphicon-thumbs-down' : 'glyphicon-thumbs-up'"></span>
+    </button>
+    <button class="btn btn-info btn-xs" (click)="updateTask(task)">
+      <span class="glyphicon glyphicon-edit"></span>
+    </button>
+    <button class="btn btn-danger btn-xs">
+      <span class="glyphicon glyphicon-trash" (click)="deleteTask(task.id)"></span>
+    </button>
+  </div>
+  <br>
+  <br>
+</div>
+<h3 *ngIf="!tasks?.length">
+  Aucune Task trouvée, veuillez en rajouter.
+</h3>

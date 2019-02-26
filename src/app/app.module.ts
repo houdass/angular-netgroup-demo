@@ -2,25 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TaskComponent } from './task/task.component';
-import { TaskListComponent } from './task/task-list/task-list.component';
-import { TaskInfoComponent } from './task/task-info/task-info.component';
+import { TaskComponent } from './components/task/task.component';
+import { TaskListComponent } from './components/task/task-list/task-list.component';
+import { TaskInfoComponent } from './components/task/task-info/task-info.component';
 import { HeaderComponent } from './header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TaskComponent,
-    TaskListComponent,
-    TaskInfoComponent,
-    HeaderComponent,
-    DropdownDirective
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, TaskComponent, TaskListComponent, TaskInfoComponent, HeaderComponent, DropdownDirective],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
