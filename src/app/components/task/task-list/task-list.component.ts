@@ -1,5 +1,7 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../../../models/task.model';
+import { TaskService } from '../../../services/task.service';
+import { ServiceA } from '../../../services/serviceA.service';
 
 @Component({
   selector: 'app-task-list',
@@ -17,12 +19,13 @@ export class TaskListComponent {
   selectedTask: Task;
   index: number;
 
-  constructor() {
+  constructor(private taskService: TaskService, private serviceA: ServiceA) {
     this.index = 5;
     this.isEdit = false;
     this.add = new EventEmitter<Task>();
     this.delete = new EventEmitter<number>();
     this.update = new EventEmitter<Task>();
+    this.serviceA.sayHello();
   }
 
   addTask(): void {
@@ -45,5 +48,9 @@ export class TaskListComponent {
     this.update.emit(this.selectedTask);
     this.isEdit = false;
     this.newTask = '';
+  }
+
+  increment() {
+    this.taskService.increment('LIST');
   }
 }

@@ -1,4 +1,5 @@
 <h3>Tasks List</h3>
+<button class="btn" (click)="increment()">Increment</button>
 <div class="input-group">
   <input class="form-control" (keyup.enter)="isEdit ? addTask() : confirmTask(newTask)" [(ngModel)]="newTask">
   <div class="input-group-btn">
