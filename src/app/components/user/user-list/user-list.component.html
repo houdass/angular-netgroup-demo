@@ -1,5 +1,6 @@
+<button (click)="addUser()" class="btn btn-primary">Add User</button>
 <div>
-  <h4 *ngFor="let user of users">
+  <h4 *ngFor="let user of users | filterPipe:'m'">
     <a [routerLink]="['../', user.id, 'detail']" [queryParams]="{ allowEdit: user.id === 1 ? 'yes' : 'no' }">Go to {{ user.name }} detail</a>
   </h4>
 </div>

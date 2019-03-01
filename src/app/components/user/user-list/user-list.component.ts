@@ -9,6 +9,7 @@ import { CanComponentDeactivate } from '../../../guards/can-deactivate-user.guar
 })
 export class UserListComponent implements OnInit, CanComponentDeactivate {
   users: Array<User>;
+  id: number;
   constructor() {}
 
   ngOnInit() {
@@ -18,6 +19,12 @@ export class UserListComponent implements OnInit, CanComponentDeactivate {
       { id: 2, name: 'Aziz' },
       { id: 3, name: 'Fatima' }
     ];
+    this.id = 4;
+  }
+
+  addUser() {
+    this.users.push({ id: ++this.id, name: 'Framework' });
+    // this.users = [...this.users, { id: ++this.id, name: 'Framework' }];
   }
 
   canDeactivate() {
