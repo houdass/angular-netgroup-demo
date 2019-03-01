@@ -7,5 +7,6 @@
 ### 3.Components
 ### 4.Services
 ### 5.Routing
+### 6.RxJS
 
 ![picture](src/assets/tasksapp.png)
