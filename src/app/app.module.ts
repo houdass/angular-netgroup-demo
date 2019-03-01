@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { Page404Component } from './components/page404/page404.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { Page404Component } from './components/page404/page404.component';
     UserListComponent,
     Page404Component
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [LoggerService],
   bootstrap: [AppComponent]
 })
