@@ -2,7 +2,8 @@
   <app-task-list [tasks]="tasks"
                  (add)="add($event)"
                  (update)="update($event)"
-                 (delete)="delete($event)"></app-task-list>
+                 (delete)="delete($event)">
+  </app-task-list>
 </div>
 <div class="col-sm-6">
   <app-task-info [tasks]="tasks" (deleteAllTasks)="deleteAll()"></app-task-info>

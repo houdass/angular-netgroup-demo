@@ -7,29 +7,33 @@ import { TaskComponent } from './components/task/task.component';
 import { TaskListComponent } from './components/task/task-list/task-list.component';
 import { TaskInfoComponent } from './components/task/task-info/task-info.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { LoggerService } from './services/logger.service';
-/* import { TaskService } from './services/task.service';
-import { FakeTaskService } from './services/fake-task.service'; */
+import { UserComponent } from './components/user/user.component';
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
+import { Page404Component } from './components/page404/page404.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent, TaskListComponent, TaskInfoComponent, HeaderComponent, DropdownDirective],
-  imports: [BrowserModule, FormsModule],
-  providers: [
-    // useClass
-    /* { provide: TaskService, useClass: FakeTaskService } */
-    // useValue
-    /* { provide: 'IS_PROD', useValue: false }, */
-    // useFactory
-    /* {
-      provide: TaskService,
-      useFactory: (IS_PROD, loggerService) =>
-        IS_PROD ? new TaskService(loggerService) : new FakeTaskService(loggerService),
-      deps: ['IS_PROD', LoggerService]
-    }, */
-    // TaskService,
-    LoggerService
+  declarations: [
+    AppComponent,
+    TaskComponent,
+    TaskListComponent,
+    TaskInfoComponent,
+    HeaderComponent,
+    SidenavComponent,
+    DropdownDirective,
+    UserComponent,
+    HomeComponent,
+    UserDetailComponent,
+    UserListComponent,
+    Page404Component
   ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,7 @@
+<h1>Detail task page</h1>
+<h3>Selected ID: {{ id }}</h3>
+
+<!--<a routerLink="../../1/detail">Go to ID 1</a>-->
+<a routerLink="/user/1/detail" queryParamsHandling="preserve" [queryParams]="{ name: 'netgroup' }">Go to ID 1</a>
+<h6>You can edit: {{ canEdit }}</h6>
+<h6>Fragment: {{ fragment }}</h6>

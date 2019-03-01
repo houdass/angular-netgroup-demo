@@ -1,0 +1,9 @@
+<a *ngFor="let link of links"
+   [routerLink]="link.route"
+   routerLinkActive="active"
+   [routerLinkActiveOptions]="{ exact: true }"
+   class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ link.label }}</h4>
+  </div>
+</a>

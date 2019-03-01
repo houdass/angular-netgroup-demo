@@ -5,5 +5,7 @@
 ### 1.Init
 ### 2.Directives
 ### 3.Components
+### 4.Services
+### 5.Routing
 
 ![picture](src/assets/tasksapp.png)
