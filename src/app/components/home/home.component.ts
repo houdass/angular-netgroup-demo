@@ -12,9 +12,12 @@ export class HomeComponent implements OnInit {
   @ViewChild('name')
   name: ElementRef;
   subscription: Subscription;
+  today: Date;
+
   constructor(private userService: UserService) {}
 
   ngOnInit() {
+    this.today = new Date();
     // const source = interval(1000);
     /*const source = Observable.create(observer => {
       let i = 0;
