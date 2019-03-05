@@ -1,7 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
-import { UserService } from '../../services/user.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Gender } from '../../models/gender.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,50 +8,29 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('name')
-  name: ElementRef;
-  subscription: Subscription;
-  today: Date;
+  @ViewChild('f') form: NgForm;
+  genders: Array<Gender>;
+  defaultGender: Gender;
 
-  constructor(private userService: UserService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.today = new Date();
-    // const source = interval(1000);
-    /*const source = Observable.create(observer => {
-      let i = 0;
-      const interval = setInterval(() => {
-        observer.next(i);
-        i++;
-        if (i === 3) {
-          // observer.error('Something went wrong!');
-          observer.complete();
-        }
-      }, 1000);
-    });
+    this.genders = [{ id: 0, label: 'Female' }, { id: 1, label: 'Male' }];
+    this.defaultGender = this.genders[1];
+  }
 
-    source.subscribe(
-      value => console.log('Next : ', value),
-      err => console.log('Error : ', err),
-      () => console.log('Complete')
-    );*/
-    /* fromEvent(this.name.nativeElement, 'keyup')
-      .pipe(
-        map((event: any) => event.target.value),
-        filter((text: string) => text.length > 2),
-        debounceTime(1000),
-        distinctUntilChanged()
-      )
-      .subscribe(text => console.log('API call', text)); */
+  onSubmit() {
+    console.log(this.form.value);
+  }
 
-    // this.userService.getUsersObservable().subscribe(); // LAZY
-    // this.userService.getUsersPromise(); // EAGER
-
-    this.userService.numberSubject.subscribe(value => console.log('Observer 1 ', value));
-    this.userService.numberSubject.next(2);
-    // this.userService.numberSubject.subscribe(value => console.log('Observer 2 ', value));
-
-    this.userService.numberSubject.next(3);
-    this.userService.numberSubject.next(4);
+  setForm() {
+    /* this.form.setValue({
+      user: {
+        name: 'Youness',
+        email: 'youness@gmail.com'
+      },
+      gender: this.genders[1]
+    }); */
+    this.form.form.patchValue({ user: { name: 'Angular ' } });
   }
 }

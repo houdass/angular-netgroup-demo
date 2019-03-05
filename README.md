@@ -9,5 +9,6 @@
 ### 5.Routing
 ### 6.RxJS
 ### 7.Pipes
+### 8.Forms-TD
 
 ![picture](src/assets/tasksapp.png)
