@@ -17,8 +17,8 @@ import { UserDetailComponent } from './components/user/user-detail/user-detail.c
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { Page404Component } from './components/page404/page404.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomPipe } from './components/pipes/custom.pipe';
-import { FilterPipe } from './components/pipes/filter.pipe';
+import { CustomPipe } from './pipes/custom.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
