@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from '../../../models/task.model';
-import { TaskService } from '../../../services/task.service';
-import { ServiceA } from '../../../services/serviceA.service';
+import { Task } from '../../models/task.model';
+import { TaskService } from '../../services/task.service';
+import { ServiceA } from '../../services/serviceA.service';
 
 @Component({
   selector: 'app-task-list',

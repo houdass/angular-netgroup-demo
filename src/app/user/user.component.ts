@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EmployeeService } from '../../services/employee.service';
-import { User } from '../../models/user.model';
+import { EmployeeService } from '../services/employee.service';
+import { User } from '../models/user.model';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -10,7 +10,7 @@ import { tap } from 'rxjs/operators';
 })
 export class UserComponent implements OnInit {
   users$: Observable<Array<User>>;
-  constructor(private employeeService: EmployeeService) {}
+  constructor(public employeeService: EmployeeService) {}
 
   ngOnInit() {
     this.users$ = this.employeeService.getEmployees();

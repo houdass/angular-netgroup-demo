@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { User } from '../../../models/user.model';
-import { CanComponentDeactivate } from '../../../guards/can-deactivate-user.guard';
+import { User } from '../../models/user.model';
+import { CanComponentDeactivate } from '../../guards/can-deactivate-user.guard';
 
 @Component({
   selector: 'app-user-detail',

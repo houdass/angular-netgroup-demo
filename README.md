@@ -12,5 +12,6 @@
 ### 8.Forms-TD
 ### 8.Forms-Reactive
 ### 9.Http
+### 10.Modules
 
 ![picture](src/assets/tasksapp.png)

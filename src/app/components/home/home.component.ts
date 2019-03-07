@@ -54,6 +54,10 @@ export class HomeComponent implements OnInit {
     return null;
   }
 
+  getHobbiesControls() {
+    return (<FormArray>this.userForm.get('hobbies')).controls;
+  }
+
   isUniqueAsync(control: FormControl): Promise<any> {
     return new Promise<any>(resolve => {
       setTimeout(() => {
