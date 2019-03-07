@@ -3,4 +3,12 @@
     <h1>USER COMPONENT</h1>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div *ngIf="employeeService.isAuthenticated()">
+  <button class="btn btn-success" (click)="addEmployee()">Add Employee</button>
+  <button class="btn btn-danger" (click)="signOut()">Logout</button>
+  <pre>{{ users$ | async | json }}</pre>
+</div>
+<div *ngIf="!employeeService.isAuthenticated()">
+   <button class="btn btn-success" (click)="signIn()">Login</button>
+</div>
+<!-- <router-outlet></router-outlet> -->

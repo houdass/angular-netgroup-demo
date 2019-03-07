@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CustomPipe implements PipeTransform {
   transform(value: string, delimiter = '#') {
-    console.log('CustomPipe called');
     return `${delimiter} ${value} ${delimiter}`;
   }
 }

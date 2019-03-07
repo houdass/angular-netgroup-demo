@@ -29,8 +29,8 @@ const appRoutes: Routes = [
   {
     path: 'user',
     component: UserComponent,
-    canActivate: [CanActivateUserGuard],
-    canActivateChild: [CanActivateChildUserGuard],
+    // canActivate: [CanActivateUserGuard],
+    // canActivateChild: [CanActivateChildUserGuard],
     data: { someText: 'Youness' },
     resolve: { resolveData: UserResolver },
     children: [
@@ -41,8 +41,8 @@ const appRoutes: Routes = [
       },
       {
         path: 'list',
-        component: UserListComponent,
-        canDeactivate: [CanDeactivateUserGuard]
+        component: UserListComponent
+        // canDeactivate: [CanDeactivateUserGuard]
       },
       {
         path: ':id/detail',
